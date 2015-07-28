@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class DemoController {
 
     @ResponseBody
-    @RequestMapping("/index/{name}/")
+    @RequestMapping(value = "/index/{name}" , method = RequestMethod.GET, produces = "application/json")
     public String index(@PathVariable("name") String name) {
         return "Welcome, " + name;
     }
